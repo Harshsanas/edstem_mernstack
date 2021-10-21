@@ -2,6 +2,20 @@
 
 # React Application using MongoDB, ExpressJS, ReactJS & NodeJS
 
+<h3>Registration Page</h3>
+
+<img src="reg.png" alt="img"/>
+
+
+<h3>Login Page</h3>
+
+<img src="login.png" alt="img"/>
+
+
+<h3>Home Page</h3>
+
+<img src="home.png" alt="img"/>
+
 <h1>TECH STACK</h1>
 
 <p>REACT JS</p>
