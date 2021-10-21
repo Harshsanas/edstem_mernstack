@@ -33,32 +33,31 @@ const FORMDATA = styled.div`
   }
 `;
 
-export default function Register() {
+export default function Register() {const [form, setForm] = useState({});
 
-    const [form, setForm] = useState({});
+// console.log(form)
 
-    const handleChange=(e)=>{
-        const{name, value} =e.target;
-        let payload={
-            ...form,
-            [name]:value,
-        }
-        setForm(payload)
-    }
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  let payload = {
+    ...form,
+    [name]: value,
+  };
+  setForm(payload);
+};
 
-    const handleSubmit=(e)=>{
-    e.preventDefault();
-    // console.log(form)
-    axios
-      .post("http://localhost:3033/form", form)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    }
+const handleSubmit = (e) => {
+  e.preventDefault();
+  // console.log(form)
 
+  axios
+    .post("http://localhost:3033/form", form)
+    .then((res) => {
+      // console.log(form)
+      console.log(res);
+    })
+    .catch((err) => console.log(err));
+};
     return (
       <div>
         <FORMDATA>

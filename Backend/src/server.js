@@ -1,24 +1,25 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
-const cors=require('cors');
+const cors = require("cors");
 
-app.use(express.json());
+app.use(express.json()); // usefull while posting and updating;
 
-const connect = require('./config/db');
+const connect = require("./config/db"); 
 
-const formController = require('./controller/form.controller')
+const formController = require("./controller/form.controller")
 
 app.use(cors());
 
-app.use("/",formController);
+app.use("/",formController)
 
+//starting nodemon server
 const start = async () => {
-    await connect()
-    app.listen(3033,()=>{
-        console.log('BACKEND SERVER RUNNING on port 3033');
-    })
-}
+  await connect();
+  app.listen(3033, () => {
+    console.log("BACKEND SERVER RUNNING on port 3033");
+  });
+};
 
-start()
+start();
