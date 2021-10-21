@@ -6,10 +6,9 @@
 
 <img src="reg.png" alt="img"/>
 
-
 <h3>Login Page</h3>
 
-<img src="login.png" alt="img"/>
+<img src="/login.png" alt="img"/>
 
 
 <h3>Home Page</h3>
