@@ -1,8 +1,6 @@
-# Crud-App-Insight
 
 
-
-# CRUD app using MongoDB, ExpressJS, ReactJS & NodeJS
+# React Application using MongoDB, ExpressJS, ReactJS & NodeJS
 
 <h1>TECH STACK</h1>
 
