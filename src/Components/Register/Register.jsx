@@ -48,14 +48,17 @@ export default function Register() {
 
     const handleSubmit=(e)=>{
     e.preventDefault();
-
+    // console.log(form)
     axios
-    .post("",form, setForm, handleSubmit)
-    .then((res)=>{
-      console.log(res)
-    })
-    .catch((err)=>{console.log(err)})
+      .post("http://localhost:3033/form", form)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     }
+
     return (
       <div>
         <FORMDATA>
@@ -67,7 +70,6 @@ export default function Register() {
               <input
                 type="text"
                 name="firstname"
-                id="firstname"
                 onChange={handleChange}
                 required
               />
@@ -78,7 +80,6 @@ export default function Register() {
                 type="text"
                 name="lastname"
                 onChange={handleChange}
-                id="lastname"
               />
             </div>
             <div>
@@ -87,7 +88,6 @@ export default function Register() {
                 type="text"
                 name="email"
                 onChange={handleChange}
-                id="email"
               />
             </div>
             <div>
@@ -96,7 +96,6 @@ export default function Register() {
                 type="password"
                 name="password"
                 onChange={handleChange}
-                id="password"
               />
             </div>
             <div>
@@ -105,11 +104,9 @@ export default function Register() {
                 type="password"
                 name="comfirmpassword"
                 onChange={handleChange}
-                id="comfirmPassword"
               />
             </div>
-
-            <button type="submit">REGISTER</button>
+            <button>REGISTER</button>
           </form>
         </FORMDATA>
       </div>

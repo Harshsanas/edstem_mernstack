@@ -7,23 +7,36 @@ export default function Home() {
 
     useEffect(()=>{
         axios
-        .get("")
-        .then((res)=>{
-            setList(res)
-        })
-        .catch((err)=>{console.error(err)})
+          .get("http://localhost:3033/form")
+          .then((res) => {
+            setList(res.data.forms);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
     })
     return (
       <div>
         <h1>WELCOME TO EDSTEM</h1>
 
+        <h3>USERS DETAILS</h3>
+
         {
-            list.length>0 && list?.map((items)=>{
+            list.length>0 && list.map((items)=>{
                 return (
-                    <div key={items.id}>
-                    {items}
-                    </div>
-                )
+                  <div key={items._id}>
+                    <table>
+                        <tr>
+                          <td>{items.firstname}</td>
+                          <td>{items.lastname}</td>
+                          <td>
+                            <a href={items.email}>{items.email}</a>
+                          </td>
+                          <td>{items.password}</td>
+                        </tr>
+                    </table>
+                  </div>
+                );
             })
         }
       </div>
