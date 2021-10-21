@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar.jsx/Navbar';
 import Register from './Components/Register/Register';
 import PageNotFound from './Components/PageNotFound';
 import Home from './Components/Home/Home';
+import PrivateRoute from './Components/PrivateRoute'
 
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
+        <PrivateRoute exact path="/">
+        <Home/>
+        </PrivateRoute>
+
         <Route exact path="/register">
           <Register />
         </Route>

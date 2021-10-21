@@ -1,6 +1,7 @@
-import React from 'react'
+import React ,{useContext}from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from "styled-components"
+import { AuthContext } from "../AuthContext";
 
 const NAVBAR = styled.div`
 display:flex;
@@ -16,6 +17,8 @@ padding: 10px;
 }
 `;
 export default function Navbar() {
+  
+  const { isAuth } = useContext(AuthContext);
     return (
       <div>
         <NAVBAR>
@@ -32,7 +35,7 @@ export default function Navbar() {
           </div>
           <div>
             <NavLink to="/login" className="navbar-text">
-              LOGIN
+              {!isAuth ? "Login" : "Logout"}
             </NavLink>
           </div>
         </NAVBAR>
